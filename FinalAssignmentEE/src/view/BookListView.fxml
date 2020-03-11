@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <ListView fx:id="bookList" onMouseClicked="#goToBook" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <Button fx:id="prevButton" mnemonicParsing="false" onAction="#prevPage" text="Previous" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextPage" text=" Next " BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <Pane prefHeight="59.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="215.0" layoutY="21.0" text="Book List" />
+            <TextField fx:id="searchTextField" layoutX="324.0" layoutY="25.0" prefHeight="25.0" prefWidth="167.0" promptText="Search" />
+            <Label fx:id="pageLabel" layoutX="60.0" layoutY="37.0" text="Currently displaying" />
+            <Button fx:id="searchBookButton" layoutX="491.0" layoutY="26.0" mnemonicParsing="false" onAction="#findBook" text="Search" />
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+            <Button mnemonicParsing="false" onAction="#genRoyaltyReport" text="Create Royalty Report" />
+          <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" text="Delete Book" />
+        </buttons>
+      </ButtonBar>
+   </bottom>
+</BorderPane>
